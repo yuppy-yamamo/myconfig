@@ -15,6 +15,43 @@ linux*)
 	;;
 esac
 
+alias ga="git add ."
+alias gc="git commit -m"
+
+alias gb="git branch"
+alias gbd="git branch -d"
+alias gbD="git branch -D"
+
+alias gco="git checkout"
+alias gcob="git checkout -b"
+
+alias gps="git push"
+alias gpl="git pull"
+
+alias sudo='sudo '
+
+# global alias
+
+alias -g L="| less"
+alias -g G="| grep"
+
+
+# alias -s
+# 拡張子でコマンドを判断
+
+alias -s txt=less
+alias -s py=python
+alias -s java=java
+alias -s md=less
+alias -s sh=less
+alias -s xml=less
+
+alias -s zip=zipinfo
+alias -s tgz=gzcat
+alias -s gz=gzcat
+alias -s tbz=bzcat
+alias -s bz2=bzcat
+
 # LANG
 
 export LANG=ja_JP.UTF-8
@@ -75,13 +112,16 @@ zle -N history-beginning-search-forward-end history-search-end
 bindkey "^P" history-beginning-search-backward-end
 bindkey "^N" history-beginning-search-forward-end
 
+setopt share_history
+
 # auto cd
 
 setopt auto_cd
 
-# auto pushd
+# pushd
 
 setopt auto_pushd
+setopt pushd_ignore_dups
 
 # auto correct
 
@@ -113,3 +153,7 @@ export LS_COLORS='di=34:ln:35:sp=32:pi=33:ex=31:bd=46;34:cd=43;34:su=41;30:sg=46
 # test setting file
 
 [ -f ~/.zshrc.mine ] && source ~/.zshrc.mine
+
+# option
+
+setopt print_eight_bit
